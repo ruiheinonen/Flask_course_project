@@ -7,7 +7,7 @@
    
  - Set up SQLite database
   - `$flask db init`
-  - `$flask db migrate -m 'my first migration' `
+  - `$flask db migrate -m 'my first migration'
   - `$flask db upgrade`
  
  - Create and activate virtual environment
