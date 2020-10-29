@@ -1,0 +1,67 @@
+/*    Background image and profile image overlay    */
+.container_pic {
+    position: relative;
+    width: 50%;
+}
+
+.image_pic {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+    display:block;
+    position:relative;
+    width: 980px;
+    margin: 0 auto;
+}
+.cover {
+    display:block;
+    position:relative;
+    height:437px;
+    overflow:hidden;
+    z-index:1;
+}
+.cover img {
+    max-width:100%;
+    z-index:1;
+}
+.profile {
+    display:block;
+    position:relative;
+    border: darkgray solid 3px;
+    border-radius:50%x;
+    width:250px;
+    height:200px;
+    margin: -100px 0px 10px 20px;
+    z-index:999;
+
+}
+.profile img {
+    max-width:100%;
+    z-index:999;
+}
+
+/*    Display username on image when hovering above it    */
+
+.profile_name {
+  overflow: hidden;
+}
+
+.label {
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+  bottom: -20px;
+  color: #fff;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transition:0.1s all;
+}
+
+.profile_name:hover .label {
+bottom: 0px;
+}
