@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/account.css') }}">
+
+<div class='container'>
+    <div align='center'>
+        <div class="main">
+            <div class="cover">
+                <img class="container_pic image_pic" align='center' width=600" height="300" src="{{ url_for('static', filename='bg_pictures/'+current_user.bg_image) }}">
+            </div>
+        </div>
+        <div class="profile profile_name">
+            <img align='center' width="300" height="200" src="{{ url_for('static', filename='profile_pictures/'+current_user.profile_image) }}">
+            <p class="label">{{ current_user.username }}</p>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+    <!-- add action="" enctype="multipart/form-data" if we upload images, files etc.-->
+    <form method='POST', action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label"> {{ form.username.label }} </label>
+            <div class="col-sm-8"><p>{{ form.username(class="form-group row col-sm-8 col-form-label form-control") }}</p></div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label"> {{ form.email.label }} </label>
+            <div class="col-sm-8"><p>{{ form.email(class="form-group row col-sm-8 col-form-label form-control") }}</p></div>
+        </div>
+                
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label"> {{ form.picture.label }} </label>
+            <div class="col-sm-8"><p>{{ form.picture(class="form-group row") }}</p></div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">{{ form.bg_picture.label }} </label>
+            <div class="col-sm-8"><p>{{ form.bg_picture(class="form-group row") }}</p></div> 
+        </div>
+
+        {{ form.submit(class="btn btn-outline-primary")}} <br><br>
+    </form>
+</div>
+
+{% endblock body %}
+
